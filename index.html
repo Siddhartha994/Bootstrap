@@ -39,12 +39,13 @@
             </div>
         </div>
     </nav>
+
     <div id="loginModal" class="modal fade" role="dialog ">
         <div class="modal-dialog modal-lg " role="content" >
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss = "modal"> </button>
+                    <button type="button" class="close" data-dismiss = "modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -86,10 +87,71 @@
                     <img src="img/logo.png" alt="logo" class="img-fluid ">
                 </div>
                 <div class="col-12 col-sm-3 align-content-center" >
-                    <a role="button" class="btn btn-warning nav-link btn-block" 
+                    <!-- TOOLTIP OFF- if button acts to open MODAL -->
+                    
+                    <!-- <a role="button" class="btn btn-warning nav-link btn-block" 
                         data-toggle="tooltip" data-html ="true"
                         title="or Call us at <br><strong> +852 12345678 </strong> "
-                        data-placement="bottom" href="#resForm">Reserve Table</a>
+                        data-placement="bottom" href="#resForm">Reserve Table</a> -->
+                        <a role="button" class="btn btn-warning nav-link btn-block"
+                            data-toggle="modal" data-target="#reserveModal">Reserve Table
+                        </a>
+                        
+                    <div id="reserveModal" class="modal fade" role="dialog ">
+                        <div class="modal-dialog modal-lg " role="content" >
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title"><b>Reserve a Table</b></h4>
+                                    <button type="button" class="close" data-dismiss = "modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12 col-md-2 ">
+                                                <b>Number of Guests </b>
+                                            </div> 
+                                            <div class="col-12 col-sm-8">
+                                                <div class="btn-group " data-toggle="buttons">
+                                                    <label class="btn"> <input type="radio" id="1" name="1" value="1" > 1</label>
+                                                    <label class="btn"> <input type="radio" id="2" name="1" value="1" > 2</label>
+                                                    <label class="btn"> <input type="radio" id="3" name="1" value="1" > 3</label>
+                                                    <label class="btn"> <input type="radio" id="4" name="1" value="1" > 4</label>
+                                                    <label class="btn"> <input type="radio" id="5" name="1" value="1" > 5</label>
+                                                    <label class="btn"> <input type="radio" id="6" name="1" value="1" > 6</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-12 col-md-2 align-content-center">
+                                                    <b><label>Section</label></b>
+                                                </div>
+                                                <div class="col-12 col-sm-8 align-content-center">
+                                                    <a href="#" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Non-Smoking</a>
+                                                    <a href="#" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Smoking</a>
+                                                </div>
+                                            </div>
+                                        <br>
+                                        </div>
+                                        <form>
+                                            <div class="form-group row ">
+                                                    <div class="col-12 col-md-2 ">
+                                                        <b>Date and Time</b>
+                                                    </div>                                
+                                                    <div class="col-12 col-md-4 ">
+                                                            <input type="date" class="form-control" id="date" name="date" placeholder="Date">
+                                                    </div>
+                                                    <div class="col-12 col-md-4">
+                                                            <input type="time" class="form-control" id="time" name="time" placeholder="Time">
+                                                    </div>
+                                                </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -188,50 +250,19 @@
                 </div>
             </div>
         </div>
-        <div id="resForm" class="row row-content justify-content-around ">
+        <!-- <div id="resForm" class="row row-content justify-content-around ">
             <div class="col-12 col-md-8">
                 <div class="card">
                     <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-12 col-md-2 ">
-                                <b>Number of Guests </b>
-                            </div> 
-                            <div class="col-12 col-sm-8">
-                                <div class="btn-group " data-toggle="buttons">
-                                    <label class="btn"> <input type="radio" id="1" name="1" value="1" > 1</label>
-                                    <label class="btn"> <input type="radio" id="2" name="1" value="1" > 2</label>
-                                    <label class="btn"> <input type="radio" id="3" name="1" value="1" > 3</label>
-                                    <label class="btn"> <input type="radio" id="4" name="1" value="1" > 4</label>
-                                    <label class="btn"> <input type="radio" id="5" name="1" value="1" > 5</label>
-                                    <label class="btn"> <input type="radio" id="6" name="1" value="1" > 6</label>
-
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <form>
-                            <div class="form-group row ">
-                                    <div class="col-12 col-md-2 ">
-                                        <b>Date and Time</b>
-                                    </div>                                
-                                    <div class="col-12 col-md-4 ">
-                                            <input type="date" class="form-control" id="date" name="date" placeholder="Date">
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                            <input type="time" class="form-control" id="time" name="time" placeholder="Time">
-                                    </div>
-                                </div>
-                        </form>
+                        
                         <br>
                         <a href="#" class="btn btn-primary offset-2"> Reserve </a>    
                     </div>
-
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
-
     <footer class="footer">
         <div class = "container">
             <div class="row">             
@@ -246,15 +277,15 @@
                 </div>
                 <div class="col-7 col-sm-5" >
                     <h5>Our Address</h5>
-    <address>
-                        121, Clear Water Bay Road<br>
-                        Clear Water Bay, Kowloon<br>
-                        HONG KONG<br>
-                        <i class="fa fa-phone fa-lg"></i> +852 1234 5678<br>
-                        <i class="fa fa-fax fa-lg"></i> +852 8765 4321<br>
-                        <i class="fa fa-envelope fa-lg"></i> 
-                        <a href="mailto:confusion@food.net">  confusion@food.net</a>
-	</address>
+                        <address>
+                            121, Clear Water Bay Road<br>
+                            Clear Water Bay, Kowloon<br>
+                            HONG KONG<br>
+                            <i class="fa fa-phone fa-lg"></i> +852 1234 5678<br>
+                            <i class="fa fa-fax fa-lg"></i> +852 8765 4321<br>
+                            <i class="fa fa-envelope fa-lg"></i> 
+                            <a href="mailto:confusion@food.net">  confusion@food.net</a>
+                        </address>
                 </div>
                 <div class="col-12 col-sm-4 align-self-center">
                     <div class="text-center">
@@ -278,10 +309,6 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('[data-toggle = "tooltip"]').tooltip();
-        });
-    </script>
+
 </body>
 
