@@ -87,12 +87,7 @@
                     <img src="img/logo.png" alt="logo" class="img-fluid ">
                 </div>
                 <div class="col-12 col-sm-3 align-content-center" >
-                    <!-- TOOLTIP OFF- if button acts to open MODAL -->
-                    
-                    <!-- <a role="button" class="btn btn-warning nav-link btn-block" 
-                        data-toggle="tooltip" data-html ="true"
-                        title="or Call us at <br><strong> +852 12345678 </strong> "
-                        data-placement="bottom" href="#resForm">Reserve Table</a> -->
+                        
                         <a role="button" class="btn btn-warning nav-link btn-block"
                             data-toggle="modal" data-target="#reserveModal">Reserve Table
                         </a>
@@ -204,13 +199,9 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
-                    <div class="btn-group" id="carouselButton">
-                        <button class="btn btn-danger btn-sm" id="carousel-pause">
-                            <span class="fa fa-pause"></span>
-                        </button>
-                        <button class="btn btn-danger btn-sm" id="carousel-play">
-                            <span class="fa fa-play"></span>
-                        </button>
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span class="fa fa-pause"></span>
+                    </button>
                     </div>
                 </div>
             </div>
@@ -264,18 +255,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div id="resForm" class="row row-content justify-content-around ">
-            <div class="col-12 col-md-8">
-                <div class="card">
-                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-                    <div class="card-body">
-                        
-                        <br>
-                        <a href="#" class="btn btn-primary offset-2"> Reserve </a>    
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
     <footer class="footer">
         <div class = "container">
@@ -325,12 +304,19 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#mycarousel").carousel( { interval: 2000 } );
-            $("#carousel-pause").click(function(){
-                $("#mycarousel").carousel('pause');
-            });
-            $("#carousel-play").click(function(){
-                $("#mycarousel").carousel('cycle');
+            $("#mycarousel").carousel( { interval: 1000 } );
+            $("#carouselButton").click(function(){
+                if($('#carouselButton').children('span').hasClass('fa-pause')){
+                    $("#mycarousel").carousel('pause');
+                    $('#carouselButton').children('span').removeClass('fa-pause');
+                    $('#carouselButton').children('span').addClass('fa-play');
+                }
+                else
+                {
+                    $("#mycarousel").carousel('cycle');
+                    $('#carouselButton').children('span').removeClass('fa-play');
+                    $('#carouselButton').children('span').addClass('fa-pause');
+                }
             });
         });
     </script>
