@@ -32,7 +32,8 @@
                     <li class="nav-item"><a class="nav-link" href= "./contactus.html" ><span class="fa fa-address-card fa-lg"></span>Contact</a> </li>
                 </ul> 
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <!-- <a data-toggle="modal" data-target="#loginModal"> -->
+                    <a id="loginButton">
                         <span class="fa fa-sign-in"></span>Login 
                     </a>
                 </span>
@@ -88,9 +89,7 @@
                 </div>
                 <div class="col-12 col-sm-3 align-content-center" >
                         
-                        <a role="button" class="btn btn-warning nav-link btn-block"
-                            data-toggle="modal" data-target="#reserveModal">Reserve Table
-                        </a>
+                    <a id="reserveTableButton"class="btn btn-block nav-link btn-warning">Reserve Table</a>
                         
                     <div id="reserveModal" class="modal fade" role="dialog ">
                         <div class="modal-dialog modal-lg " role="content" >
@@ -99,56 +98,48 @@
                                     <h4 class="modal-title"><b>Reserve a Table</b></h4>
                                     <button type="button" class="close" data-dismiss = "modal">&times;</button>
                                 </div>
-                                <div class="modal-body">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-12 col-md-2 ">
-                                                <b>Number of Guests </b>
-                                            </div> 
-                                            <div class="col-12 col-sm-8">
-                                                <div class="btn-group " data-toggle="buttons">
-                                                    <label class="btn"> <input type="radio" id="1" name="1" value="1" > 1</label>
-                                                    <label class="btn"> <input type="radio" id="2" name="1" value="1" > 2</label>
-                                                    <label class="btn"> <input type="radio" id="3" name="1" value="1" > 3</label>
-                                                    <label class="btn"> <input type="radio" id="4" name="1" value="1" > 4</label>
-                                                    <label class="btn"> <input type="radio" id="5" name="1" value="1" > 5</label>
-                                                    <label class="btn"> <input type="radio" id="6" name="1" value="1" > 6</label>
-                                                </div>
+                                <form>
+                                    <div class="form-group row">
+                                        <label for="numberofguests" class="col-sm-2 col-form-label"><b>Number of Guests</b></label>
+                                            <div class="col-sm align-self-center">
+                                                <label for="option1" class="mr-3"><input type="radio" name="options" id="option1"> 1</label>
+                                                <label for="option2" class="mr-3"><input type="radio" name="options" id="option2"> 2</label>
+                                                <label for="option3" class="mr-3"><input type="radio" name="options" id="option3"> 3</label>
+                                                <label for="option4" class="mr-3"><input type="radio" name="options" id="option4"> 4</label>
+                                                <label for="option5" class="mr-3"><input type="radio" name="options" id="option5"> 5</label>
+                                                <label for="option6"><input type="radio" name="options" id="option6"> 6</label>
                                             </div>
-                                        </div>
-                                        <br>
-                                        <div class="form-group ">
-                                            <div class="row">
-                                                <label class="col-md-2 col-form-label"><b>Section</b></label>
-
-                                                <div class="col-12 col-sm-8 align-content-center">
-                                                    <div class="btn-group-toggle" data-toggle="buttons">
-                                                        <label class="btn btn-success active">
-                                                        <input type="checkbox" name="options" id="option1" checked autocomplete="off"> Non-smoking
-                                                        </label>
-                                                        <label class="btn btn-danger ">
-                                                        <input type="checkbox"name= "options" id="option2" checked autocomplete="off"> Smoking
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <br>
-                                        </div>
-                                        <form>
-                                            <div class="form-group row ">
-                                                    <div class="col-12 col-md-2 ">
-                                                        <b>Date and Time</b>
-                                                    </div>                                
-                                                    <div class="col-12 col-md-4 ">
-                                                            <input type="date" class="form-control" id="date" name="date" placeholder="Date">
-                                                    </div>
-                                                    <div class="col-12 col-md-4">
-                                                            <input type="time" class="form-control" id="time" name="time" placeholder="Time">
-                                                    </div>
-                                                </div>
-                                        </form>
                                     </div>
-                                </div>
+            
+                                    <div class="form-group row">
+                                        <label for="section" class="col-sm-2 col-form-label"><b>Section</b></label>
+                                        <div class="btn-group btn-group-toggle col-12 col-sm-auto" data-toggle="buttons">
+                                            <label class="btn btn-success active">
+                                                <input type="radio" name="newoptions" id="newoption1" checked="checked">Non-smoking</input>
+                                            </label>
+                                            <label class="btn btn-danger">
+                                                <input type="radio" name="newoptions" id="newoption2">Smoking</input>
+                                            </label>
+                                        </div>
+                                    </div>
+            
+                                    <div class="form-group row">
+                                        <label for="dateandtime" class="col-sm-2 col-form-label"><b>Date and Time</b></label>
+                                        <div class="col-12 col-sm-4 align-self-center">
+                                            <input type="text" name="date" placeholder="Date" id="date" class="form-control">
+                                        </div>
+                                        <div class="col-12 col-sm-4 align-self-center">
+                                            <input type="text" name="time" placeholder="Time" id="time" class="form-control">
+                                        </div>
+                                    </div>
+            
+                                    <div class="form-group row">
+                                        <div class="col-12 col-sm-4 offset-sm-2">
+                                            <button class="btn btn-secondary " type="button" data-dismiss="modal">Cancel</button>
+                                            <button class="btn btn-primary ml-1" type="submit">Reserve</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -304,7 +295,7 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#mycarousel").carousel( { interval: 1000 } );
+            $("#mycarousel").carousel( { interval: 2000 } );
             $("#carouselButton").click(function(){
                 if($('#carouselButton').children('span').hasClass('fa-pause')){
                     $("#mycarousel").carousel('pause');
@@ -319,6 +310,16 @@
                 }
             });
         });
+    </script>
+    <script>
+        $("#reserveTableButton").click(function(){
+            $('#reserveModal').modal('toggle');
+        })
+    </script>
+    <script>
+        $("#loginButton").click(function(){
+            $('#loginModal').modal('toggle');
+        })
     </script>
 </body>
 
